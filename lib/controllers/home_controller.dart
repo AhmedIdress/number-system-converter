@@ -2,6 +2,7 @@ import 'dart:collection';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -62,6 +63,7 @@ class HomeController extends GetxController {
         value: element,
       );
     }).toList();
+    FlutterNativeSplash.remove();
     super.onInit();
   }
 
@@ -110,13 +112,13 @@ class HomeController extends GetxController {
         convertFromOctalToHexadecimal(convertNumber);
         break;
       case 'Hexadecimal' 'Binary':
-        convertFromHexadecimalToBinary(convertNumber);
+        convertFromHexadecimalToBinary(convertNumber.toUpperCase());
         break;
       case 'Hexadecimal' 'Decimal':
-        convertFromHexadecimalToDecimal(convertNumber);
+        convertFromHexadecimalToDecimal(convertNumber.toUpperCase());
         break;
       case 'Hexadecimal' 'Octal':
-        convertFromHexadecimalToOctal(convertNumber);
+        convertFromHexadecimalToOctal(convertNumber.toUpperCase());
         break;
     }
     update();
